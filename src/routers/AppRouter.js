@@ -8,6 +8,7 @@ import Contacto from "../pages/Contacto"
 import NotFound from "../pages/NotFound"
 import Profile from "../pages/Profile"
 import Ventas from "../pages/Ventas"
+import Home from "../pages/Home"
 
 
 export default function AppRouter() {
@@ -18,7 +19,8 @@ export default function AppRouter() {
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/contacto" component={Contacto}/>
                 <Route exact path="/ventas" component={Ventas}/>
-                <Route exact path="/" component={LoginB}/>
+                <Route exact path="/login" component={LoginB}/>
+                <Route exact path="/" component={Home}/>
                 <Route exact path="/categorias" component={Categorias}/>
 
                 <Route exact path="/Profile/:username" component={Profile}/>
