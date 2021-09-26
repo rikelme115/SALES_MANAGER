@@ -11,18 +11,12 @@ const LoginB = () => {
                         <img src={LoginIcon} alt="icon" />
                     </div>
                     <form class="col-12">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="user-group" aria-describedby="emailHelp" placeholder="Nombre de usuario" />
-                        </div>
-                        <div class="mb-3">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />                        </div>
+                                               
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary ">Iniciar Sesion</button>
+                            <button type="submit" class="btn btn-primary ">Iniciar Sesion con Gmail</button>
                         </div>
                     </form>
-                    <div class="col-12 forgot">
-                        <a href="#">Recordar Contraseña?</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
