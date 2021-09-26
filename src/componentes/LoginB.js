@@ -1,5 +1,5 @@
 import React from "react";
-import LoginIcon from '../../images/user.png';
+import LoginIcon from '../images/user.png';
 import './Login.css';
 
 const LoginB = () => {

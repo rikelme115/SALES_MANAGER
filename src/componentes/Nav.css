@@ -1,0 +1,33 @@
+/* Show it is fixed to the top */
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+  }
+
+.btn-outline-success{
+    margin-right: 5px;
+}
+
+
+.navbar-dark{
+    background-color: #3b4652 !important;
+    opacity: .85;
+}
+
+.bg-btn{
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+}
+
+.bg-btn:hover{
+    color: #fff;
+    background-color: #0a58ca;
+    border-color: #0a53be;
+}
+
+.bg-btn:active{
+    color: #fff;
+    background-color: #0a58ca;
+    border-color: #0a53be;
+}

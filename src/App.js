@@ -1,15 +1,14 @@
-import './App.css';
-
-
-import LoginB from './componentes/Login/LoginB';
-
+import AppRouter from './routers/AppRouter';
+import './index.css';
 
 
 function App() {
   return (
     <div>
-      <LoginB />
+      <AppRouter />
     </div>
+   
+    
     
     
   );
