@@ -4,7 +4,7 @@ import LoginB from "../componentes/LoginB"
 import Nav from "../componentes/Nav"
 import About from "../pages/About"
 import Categorias from "../pages/Categorias"
-import Contacto from "../pages/Contacto"
+import Productos from "../pages/Productos"
 import NotFound from "../pages/NotFound"
 import Profile from "../pages/Profile"
 import Ventas from "../pages/Ventas"
@@ -17,7 +17,7 @@ export default function AppRouter() {
             <Nav />
             <Switch>
                 <Route exact path="/about" component={About}/>
-                <Route exact path="/contacto" component={Contacto}/>
+                <Route exact path="/productos" component={Productos}/>
                 <Route exact path="/ventas" component={Ventas}/>
                 <Route exact path="/login" component={LoginB}/>
                 <Route exact path="/" component={Home}/>

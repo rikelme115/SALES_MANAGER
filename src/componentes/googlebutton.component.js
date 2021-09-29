@@ -59,7 +59,7 @@ class GoogleLoginComponent extends Component {
           ) : (
             <GoogleLogin
               clientId={CLIENT_ID}
-              buttonText="Iniciar Sesion con Google"
+              buttonText="Iniciar Sesion con Gmail"
               onSuccess={this.responseGoogleSuccess}
               onFailure={this.responseGoogleError}
               isSignedIn={true}

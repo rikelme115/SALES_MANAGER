@@ -18,7 +18,7 @@ const Nav = () => {
                             <Link exact class="nav-link" aria-current="page" to="/ventas" >Ventas</Link>
                         </li>
                         <li class="nav-item">
-                            <Link exact class="nav-link" aria-current="page" to="/contacto" >Contacto</Link>
+                            <Link exact class="nav-link" aria-current="page" to="/productos" >Productos</Link>
                         </li>
                         <li class="nav-item">
                             <Link exact class="nav-link" aria-current="page" to="/about" >Acerca de</Link>

@@ -14,6 +14,7 @@
     box-shadow: 0px 0px 3px #848484;
     -moz-box-shadow: 0px 0px 3px #848484;
     -webkit-box-shadow: 0px 0px 3px #848484;
+    margin-top: 50px;
     
 }
 
@@ -24,6 +25,7 @@
 }
 
 .gap-2{
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
