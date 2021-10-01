@@ -2,6 +2,7 @@ import React from "react";
 import LoginIcon from '../images/user.png';
 import './Login.css';
 import GoogleLoginComponent from "./googlebutton.component";
+import UserProfile from './UserProfile';
 
 
 

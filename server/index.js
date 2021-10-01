@@ -21,6 +21,25 @@ app.get("/api/productos", (req,res)=>{
 });
 
 
+app.post("/insertar_producto", (req, res) => {
+    const descripcion = req.body.descripcion;
+    const valor_unitario = req.body.valor_unitario;
+    const estado = req.body.estado;
+
+    db.query(
+        "INSERT INTO productos (descripcion, valor_unitario, estado) VALUES (?,?,?)",
+        [descripcion, valor_unitario, estado],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send("Datos Insertados");
+            }
+        }
+    );
+});
+
+
 
 app.listen(3001, () => {
     console.log('SERVIDOR CORRIENDO PUERTO 3001 IN http://localhost:3001')

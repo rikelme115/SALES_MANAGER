@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './Nav.css';
+import UserProfile from './UserProfile';
 
 const Nav = () => {
     return (
@@ -16,15 +17,22 @@ const Nav = () => {
                         </li>
                         <li class="nav-item">
                             <Link exact class="nav-link" aria-current="page" to="/ventas" >Ventas</Link>
-                        </li>
-                        <li class="nav-item">
-                            <Link exact class="nav-link" aria-current="page" to="/productos" >Productos</Link>
+                        </li>   
+                        <li class="nav-item dropdown">
+                            <Link class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </Link>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><Link class="dropdown-item" to="/registrar_producto">Registrar un producto</Link></li>
+                                <li><Link class="dropdown-item" to="/maestro_productos">Maestro de productos</Link></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <Link exact class="nav-link" aria-current="page" to="/about" >Acerca de</Link>
-                        </li>                        
+                        </li>
                     </ul>
                     <form class="d-flex">
+                        <p>{UserProfile.getName()}</p>
                         <Link exact class="btn btn-outline-success" type="submit" to="/login" >Login</Link>
                     </form>
 

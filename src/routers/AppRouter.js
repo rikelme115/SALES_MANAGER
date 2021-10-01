@@ -9,6 +9,7 @@ import NotFound from "../pages/NotFound"
 import Profile from "../pages/Profile"
 import Ventas from "../pages/Ventas"
 import Home from "../pages/Home"
+import MaestroProductos from "../pages/MaestroProductos"
 
 
 export default function AppRouter() {
@@ -17,7 +18,8 @@ export default function AppRouter() {
             <Nav />
             <Switch>
                 <Route exact path="/about" component={About}/>
-                <Route exact path="/productos" component={Productos}/>
+                <Route exact path="/registrar_producto" component={Productos}/>
+                <Route exact path="/maestro_productos" component={MaestroProductos}/>
                 <Route exact path="/ventas" component={Ventas}/>
                 <Route exact path="/login" component={LoginB}/>
                 <Route exact path="/" component={Home}/>
