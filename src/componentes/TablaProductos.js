@@ -19,6 +19,8 @@ export default function TablaProductos() {
                         <form class="d-flex">
                             <Link exact class="btn btn-outline-primary btn-register" type="submit" to="/registrar_producto" >Registrar Producto</Link>
                         </form>
+                        <input class="form-control form-control-dark d-flex" type="text" placeholder="Buscar Producto" aria-label="Search" />
+                        <h3>Detalle Productos</h3>
                         <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>

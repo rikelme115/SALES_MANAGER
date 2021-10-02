@@ -1,0 +1,19 @@
+.floating-select{
+    margin-top:15px;
+    margin-bottom: 10px;
+
+}
+
+.main-section{
+    
+    margin-top: 20% ;
+    padding: 5%;
+}
+
+.container-register{
+    padding-bottom: 200px;
+}
+
+input{
+    text-transform: uppercase;
+}

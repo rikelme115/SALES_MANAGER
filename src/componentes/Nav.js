@@ -15,9 +15,16 @@ const Nav = () => {
                         <li class="nav-item">
                             <Link exact class="nav-link active" aria-current="page" to="/" >Home</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link exact class="nav-link" aria-current="page" to="/ventas" >Ventas</Link>
-                        </li>   
+            
+                        <li class="nav-item dropdown">
+                            <Link class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ventas
+                            </Link>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><Link class="dropdown-item" to="/realizarventa">Realizar Venta</Link></li>
+                                <li><Link class="dropdown-item" to="/gestionarventas">Gestionar Ventas</Link></li>
+                            </ul>
+                        </li>
                         <li class="nav-item dropdown">
                             <Link class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Productos
@@ -25,6 +32,15 @@ const Nav = () => {
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><Link class="dropdown-item" to="/registrar_producto">Registrar un producto</Link></li>
                                 <li><Link class="dropdown-item" to="/maestro_productos">Maestro de productos</Link></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <Link class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Administrar Usuarios
+                            </Link>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><Link class="dropdown-item" to="/usuarios">Gestionar Usuarios</Link></li>
+
                             </ul>
                         </li>
                         <li class="nav-item">

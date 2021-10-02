@@ -10,6 +10,9 @@ import Profile from "../pages/Profile"
 import Ventas from "../pages/Ventas"
 import Home from "../pages/Home"
 import MaestroProductos from "../pages/MaestroProductos"
+import Usuarios from "../pages/Usuarios"
+import VentasForm from "../pages/VentasForm"
+import GestionarVentas from "../pages/GestionarVentas"
 
 
 export default function AppRouter() {
@@ -24,7 +27,9 @@ export default function AppRouter() {
                 <Route exact path="/login" component={LoginB}/>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/categorias" component={Categorias}/>
-
+                <Route exact path="/usuarios" component={Usuarios}/>
+                <Route exact path="/realizarventa" component={VentasForm}/>
+                <Route exact path="/gestionarventas" component={GestionarVentas}/>
                 <Route exact path="/Profile/:username" component={Profile}/>
 
                 <Route path="*" component={NotFound}/>
