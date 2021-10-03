@@ -32,23 +32,23 @@ export default function TablaProductos() {
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Zapatos Velez Talla 40</td>
+                                    <td>135000</td>
+                                    <td>disponible</td>
                                     <td><Link href="#">Editar</Link></td>
                                     <td><Link href="#">Eliminar</Link></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">2</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>Camiseta Polo Talla M</td>
+                                    <td>80000</td>
+                                    <td>disponible</td>
                                     <td><Link href="#">Editar</Link></td>
                                     <td><Link href="#">Eliminar</Link></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
-                                    <td></td>
+                                    <td>Pantalon Levis Talla </td>
                                     <td></td>
                                     <td></td>
                                     <td><Link href="#">Editar</Link></td>
