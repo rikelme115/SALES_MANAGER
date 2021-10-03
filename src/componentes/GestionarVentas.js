@@ -49,12 +49,8 @@ export default function GestionarVentas() {
                                     <td>XXXXX</td>
                                     <td>xXXXX xxx yyyyy</td>
 
-                                    <td> zzzzz xxx yyyyy
-
-                                    </td>
-                                    <td> DD-mm-yyyy
-
-                                    </td>
+                                    <td> zzzzz xxx yyyyy</td>
+                                    <td> DD-mm-yyyy</td>
 
                                     <td><Link href="#">Actualizar</Link></td>
 
@@ -64,12 +60,8 @@ export default function GestionarVentas() {
                                     <td>XXXXX</td>
                                     <td>xXXXX xxx yyyyy</td>
 
-                                    <td> zzzzz xxx yyyyy
-
-                                    </td>
-                                    <td> DD-mm-yyyy
-
-                                    </td>
+                                    <td> zzzzz xxx yyyyy</td>
+                                    <td> DD-mm-yyyy</td>
 
                                     <td><Link href="#">Actualizar</Link></td>
 
@@ -79,12 +71,8 @@ export default function GestionarVentas() {
                                     <td>XXXXX</td>
                                     <td>xXXXX xxx yyyyy</td>
 
-                                    <td> zzzzz xxx yyyyy
-
-                                    </td>
-                                    <td> DD-mm-yyyy
-
-                                    </td>
+                                    <td> zzzzz xxx yyyyy</td>
+                                    <td> DD-mm-yyyy</td>
 
                                     <td><Link href="#">Actualizar</Link></td>
 
