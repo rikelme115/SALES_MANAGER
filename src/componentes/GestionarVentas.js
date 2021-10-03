@@ -84,17 +84,18 @@ export default function GestionarVentas() {
 
                         <h1>Actualizar Registro de Ventas</h1>
                         <hr />
-                        <div class="col col-lg-2">
+                        <div class="form-floating floating-select">
 
-                            <select name="estado2" class="form-select" id="floating2" aria-label="Floating label select example">
+                            <select name="estado2" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                                 <option selected>Estado Venta</option>
                                 <option value="Administrador">En proceso</option>
                                 <option value="Vendedor">Entregada</option>
-                                <option value="Vendedor">Cancelada</option>
+                                <option value="Vendedor">Cancelada</option>                                
                             </select>
-
-
+                            <label for="floatingSelect">Estado Venta</label>
                         </div>
+                        
+
                         <div class="form-floating mb-3">
 
                         </div>
@@ -102,11 +103,11 @@ export default function GestionarVentas() {
                             <input type="text" name="fecha" value="dd-mm-yyyy" onChange={(e) => { setDescripcion(e.target.value); }} class="form-control" id="fecha" placeholder="" />
                             <label for="floatingInput">Fecha</label>
                         </div>
-                        <div class="form-floating">
+                        <div class="form-floating mb-3">
                             <input type="text" name="Nombre" value="XXXXXXXXXX XXXXXXX  XXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="valor unitario" />
                             <label for="floatingInput">Nombre Cliente</label>
                         </div>
-                        <div class="form-floating">
+                        <div class="form-floating mb-3">
                             <input type="text" name="idcliente" value="XXXXXXXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="valor unitario" />
                             <label for="floatingInput">Documento de Identificación</label>
                         </div>

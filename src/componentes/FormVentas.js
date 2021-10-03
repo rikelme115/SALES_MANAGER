@@ -31,15 +31,15 @@ export default function FormVentas() {
                         <h1>Registro de Ventas</h1>
                         <hr />
                         <div class="form-floating mb-3">
-                            <input type="text" name="fecha" onChange={(e) => { setDescripcion(e.target.value); }} class="form-control" id="fecha" placeholder="" />
+                            <input type="text" name="fecha" onChange={(e) => { setDescripcion(e.target.value); }} class="form-control" id="fecha" placeholder="Fecha" />
                             <label for="floatingInput">Fecha</label>
                         </div>
-                        <div class="form-floating">
-                            <input type="text" name="Nombre" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="valor unitario" />
+                        <div class="form-floating mb-3">
+                            <input type="text" name="Nombre" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="Nombre Cliente" />
                             <label for="floatingInput">Nombre Cliente</label>
                         </div>
-                        <div class="form-floating">
-                            <input type="text" name="idcliente" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="valor unitario" />
+                        <div class="form-floating mb-3">
+                            <input type="text" name="idcliente" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="Documento de Identificacion" />
                             <label for="floatingInput">Documento de Identificación</label>
                         </div>
                         <div class="form-floating floating-select">
