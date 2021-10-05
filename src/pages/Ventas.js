@@ -1,8 +1,8 @@
 import React from "react";
-
+import Form from '../componentes/Form'
 const Ventas = () => {
     return (
-        <h1>Ventas</h1>
+        <Form/>
     );
 }
 export default Ventas;
