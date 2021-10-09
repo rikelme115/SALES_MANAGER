@@ -1,0 +1,31 @@
+.floating-select{
+    margin-top:15px;
+    margin-bottom: 10px;
+
+}
+
+.main-section{
+    
+    margin-top: 20% ;
+    padding: 5%;
+}
+
+.container-register{
+    padding-bottom: 200px;
+}
+
+.modal-content{
+    background-color: white !important;
+}
+
+.btn-editar{
+    margin-right: 10px;
+    
+    background-color: rgb(128, 126, 126);
+    border-color: rgb(128, 126, 126);
+}
+
+.btn-editar:hover{
+    background-color: rgb(63, 61, 61);
+    border-color: rgb(63, 61, 61);
+}

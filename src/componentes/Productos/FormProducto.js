@@ -14,7 +14,7 @@ export default function FormProducto() {
             descripcion: descripcion,
             valor_unitario: valor_unitario,
             estado: estado,
-        }).then(() => {            
+        }).then(() => {
             alert("Datos insertados exitosamente")
         })
     };
