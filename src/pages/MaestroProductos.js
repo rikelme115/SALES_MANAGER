@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import TablaProductos from '../componentes/TablaProductos'
 
 export default function MaestroProductos() {

@@ -1,29 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './FormVentas.css'
-import axios from 'axios'
 import { Link } from "react-router-dom";
 
-export default function GestionarVentas() {
-
-    const [descripcion, setDescripcion] = useState("")
-    const [valor_unitario, setValor_unitario] = useState(0)
-    const [estado, setEstado] = useState("")
-
-    const insert_products = () => {
-        axios.post("http://localhost:3001/insertar_producto", {
-            descripcion: descripcion,
-            valor_unitario: valor_unitario,
-            estado: estado,
-        }).then(() => {
-            <h1>datos insertado correctamente</h1>
-            alert("Datos insertados exitosamente")
-        })
-    };
+export default function GestionarVentas() {    
 
     return (
         <div>
             <div class="container  container-register">
                 <div class="row justify-content-md-center">
+                    <div class="col col-lg-2">
+
+                    </div>
 
                     <div class="col-md-auto">
 
@@ -90,29 +77,29 @@ export default function GestionarVentas() {
                                 <option selected>Estado Venta</option>
                                 <option value="Administrador">En proceso</option>
                                 <option value="Vendedor">Entregada</option>
-                                <option value="Vendedor">Cancelada</option>                                
+                                <option value="Vendedor">Cancelada</option>
                             </select>
                             <label for="floatingSelect">Estado Venta</label>
                         </div>
-                        
+
 
                         <div class="form-floating mb-3">
 
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="fecha" value="dd-mm-yyyy" onChange={(e) => { setDescripcion(e.target.value); }} class="form-control" id="fecha" placeholder="" />
+                            <input type="text" name="fecha" value="dd-mm-yyyy"  class="form-control" id="fecha" placeholder="" />
                             <label for="floatingInput">Fecha</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="Nombre" value="XXXXXXXXXX XXXXXXX  XXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="valor unitario" />
+                            <input type="text" name="Nombre" value="XXXXXXXXXX XXXXXXX  XXXX"  class="form-control" id="floatingInput" placeholder="valor unitario" />
                             <label for="floatingInput">Nombre Cliente</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="idcliente" value="XXXXXXXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="valor unitario" />
+                            <input type="text" name="idcliente" value="XXXXXXXXXX"  class="form-control" id="floatingInput" placeholder="valor unitario" />
                             <label for="floatingInput">Documento de Identificación</label>
                         </div>
                         <div class="form-floating floating-select">
-                            <h3>Detalle de productos venddios</h3>
+                            <h3>Detalle de productos vendidos</h3>
                             <table class="table table-hover table-bordered">
                                 <thead>
                                     <tr>
@@ -127,13 +114,13 @@ export default function GestionarVentas() {
                                     <tr>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="ID" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="ID" /></td>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
 
 
-                                        <td> <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="PRECIO" />
+                                        <td> <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="PRECIO" />
                                         </td>
 
 
@@ -141,13 +128,13 @@ export default function GestionarVentas() {
                                     <tr>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="ID" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="ID" /></td>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
 
 
-                                        <td> <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="PRECIO" />
+                                        <td> <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="PRECIO" />
                                         </td>
 
 
@@ -155,13 +142,13 @@ export default function GestionarVentas() {
                                     <tr>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="ID" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="ID" /></td>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
 
 
-                                        <td> <input type="text" name="Nombre" value="XXXXX" onChange={(e) => { setValor_unitario(e.target.value); }} class="form-control" id="floatingInput" placeholder="PRECIO" />
+                                        <td> <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="PRECIO" />
                                         </td>
 
 
@@ -169,8 +156,8 @@ export default function GestionarVentas() {
                                 </tbody>
                             </table>
                         </div>
-                        <button onClick={insert_products} type="submit" class="btn btn-primary w-100">Agregar linea de Venta</button>
-                        <button onClick={insert_products} type="submit" class="btn btn-primary w-100">Actualizar Venta</button>
+                        <button  type="submit" class="btn btn-primary w-100">Agregar linea de Venta</button>
+                        <button  type="submit" class="btn btn-primary w-100">Actualizar Venta</button>
                     </div>
                     <div class="col col-lg-2">
 

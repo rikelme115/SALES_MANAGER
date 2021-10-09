@@ -1,12 +1,10 @@
 import React from 'react'
-import axios from 'axios'
 import './GestionUsuarios.css'
-import { DataTable } from 'primereact/datatable';
-import UserProfile from './UserProfile';
+//import UserProfile from './UserProfile';
 import { Link } from "react-router-dom";
 
 export default function GestionUsuarios() {
-    const user = UserProfile.getName();
+    //const user = UserProfile.getName();
     return (
         <div>
             <div class="container  container-register">

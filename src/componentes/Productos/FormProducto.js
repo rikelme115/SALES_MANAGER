@@ -15,7 +15,6 @@ export default function FormProducto() {
             valor_unitario: valor_unitario,
             estado: estado,
         }).then(() => {
-            <h1>datos insertado correctamente</h1>
             alert("Datos insertados exitosamente")
         })
     };
