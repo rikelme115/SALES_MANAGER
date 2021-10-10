@@ -48,7 +48,7 @@ const Nav = () => {
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <p>{UserProfile.getName()}</p>
+                        <Link exact class="btn btn-outline-primary" >{UserProfile.getName()}</Link>
                         <Link exact class="btn btn-outline-success" type="submit" to="/login" >Login</Link>
                     </form>
 

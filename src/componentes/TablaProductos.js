@@ -7,17 +7,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import ReactPaginate from 'react-paginate';
 
-const url = "http://localhost:3001/api/productos";
+const url = "http://localhost:3001/productos";
 
 export default function TablaProductos() {
     //const user = UserProfile.getName();
-    
+
     const [productosLista, setProductoLista] = useState([]);
     const [paginaNumero, setPaginaNumero] = useState(0);
     const productosPorPagina = 5;
     const paginasVisitadas = paginaNumero * productosPorPagina;
     //const mostrarProductos = productosLista.slice(paginasVisitadas, paginasVisitadas + productosPorPagina).map(productos =>{
-        
+
     //});
     const [busqueda, setBusqueda] = useState('');
     const [productoSeleccionado, setProductoSeleccionado] = useState({
@@ -41,11 +41,10 @@ export default function TablaProductos() {
             .delete(`http://localhost:3001/api/delete/${id}`)
             .then((response) => {
                 PeticionGet();
-                setProductoLista(productosLista.filter((productos) => {
-                    return productos.id !== id
-                    
-                }))
-            })
+                setProductoLista(productosLista.filter(productos => productos.id !== id));
+                
+            });
+            alert("eliminacion correcta");
     };
 
 
@@ -98,13 +97,13 @@ export default function TablaProductos() {
     };
 
     useEffect(() => {
-        if(busqueda !== ""){
+        if (busqueda !== "") {
             PeticionGetByDesc();
-        }else{
+        } else {
             PeticionGet();
         }
-        
-    }, [busqueda])  
+
+    }, [busqueda])
 
 
     return (
@@ -138,9 +137,9 @@ export default function TablaProductos() {
                             </thead>
                             <tbody>
                                 {productosLista && productosLista.filter((productos) => {
-                                    if (busqueda == ""){
+                                    if (busqueda == "") {
                                         return productos
-                                    } else if (productos.descripcion.toLowerCase().includes(busqueda.toLowerCase())){
+                                    } else if (productos.descripcion.toLowerCase().includes(busqueda.toLowerCase())) {
                                         return productos
                                     }
                                 }).map((productos) => {
@@ -164,7 +163,7 @@ export default function TablaProductos() {
                     </div>
                     <div class="col col-lg-2">
 
-                    </div>                    
+                    </div>
                 </div>
             </div>
 

@@ -1,13 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ProductsForm from './ProductsForm';
-import { useState } from 'react/cjs/react.development';
 import './styles/AddForm.css';
 const AddForm = (props) => {
-    const productsData=[
-       
-      ]
+    const productsData=[]
   
       const [products,setProducts]=useState(productsData);
       console.log(productsData);

@@ -59,14 +59,14 @@ class GoogleLoginComponent extends Component {
   };
 
   render() {
-    const perfil = this.state.userInfo.emailId;
-    UserProfile.setName(perfil);
+    const email = this.state.userInfo.emailId
+    UserProfile.setName(email);
     return (
       <div>
         {this.state.isLoggedIn ? (
           <div>
 
-            <p>Bienvenido, {perfil}</p>
+            <p>Bienvenido, {UserProfile.getName()}</p>
             <GoogleLogout
               clientId={CLIENT_ID}
               buttonText={"Cerrar Sesion"}
