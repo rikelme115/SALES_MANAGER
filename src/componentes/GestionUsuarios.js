@@ -137,11 +137,11 @@ export default function GestionUsuarios() {
                                             <label for="floatingInput">ID</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" name="nombre" class="form-control" id="floatingInput" placeholder="nombre" onChange={handleChange} value={usuarioSeleccionado && usuarioSeleccionado.nombre} />
+                                            <input type="text" name="nombre" readOnly class="form-control" id="floatingInput" placeholder="nombre" onChange={handleChange} value={usuarioSeleccionado && usuarioSeleccionado.nombre} />
                                             <label for="floatingInput">nombre</label>
                                         </div>
                                         <div class="form-floating">
-                                            <input type="text" name="email" class="form-control" id="floatingInput" placeholder="email" onChange={handleChange} value={usuarioSeleccionado && usuarioSeleccionado.email} />
+                                            <input type="text" name="email" readOnly class="form-control" id="floatingInput" placeholder="email" onChange={handleChange} value={usuarioSeleccionado && usuarioSeleccionado.email} />
                                             <label for="floatingInput">email</label>
                                         </div>
                                         <div class="form-floating floating-select">

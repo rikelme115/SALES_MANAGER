@@ -1,6 +1,8 @@
 import React from 'react'
 import './FormVentas.css'
 //import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrashAlt, faPlus} from '@fortawesome/free-solid-svg-icons';
 
 export default function FormVentas() {
     
@@ -33,10 +35,10 @@ export default function FormVentas() {
                                 <thead>
                                     <tr>
 
-                                        <th scope="col">ID DEL PRODUCTO</th>
-                                        <th scope="col">CANTIDAD</th>
-                                        <th scope="col">PRECIO UNITARIO</th>
-
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Precio Unitario</th>
+                                        <th scope="col">Accion</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,6 +53,9 @@ export default function FormVentas() {
 
                                         <td> <input type ="text" name="Nombre"  class ="form-control" id="floatingInput" placeholder="PRECIO" />
                                         </td>
+                                        <td>
+                                        <button class="btn btn-success"><FontAwesomeIcon icon={faPlus} /></button>
+                                        </td>
 
 
                                     </tr>
@@ -58,7 +63,6 @@ export default function FormVentas() {
                                 </tbody>
                             </table>
                         </div>
-                        <button  type="submit" class="btn btn-primary w-100">Agregar linea de Venta</button>
                         <button  type="submit" class="btn btn-primary w-100">Registrar Venta</button>
                     </div>
                     <div class="col col-lg-2">
