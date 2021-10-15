@@ -38,7 +38,7 @@ export default function FormVentas() {
                                         <th scope="col">ID</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">Precio Unitario</th>
-                                        <th scope="col">Accion</th>
+                                        <th scope="col">Op</th>
                                     </tr>
                                 </thead>
                                 <tbody>

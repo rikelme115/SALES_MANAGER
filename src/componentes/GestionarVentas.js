@@ -2,7 +2,7 @@ import React from 'react'
 import './FormVentas.css'
 import { Link } from "react-router-dom";
 
-export default function GestionarVentas() {    
+export default function GestionarVentas() {
 
     return (
         <div>
@@ -71,9 +71,10 @@ export default function GestionarVentas() {
 
                         <h1>Actualizar Registro de Ventas</h1>
                         <hr />
+                        
                         <div class="form-floating floating-select">
 
-                            <select name="estado2" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <select name="estado2" class="form-select w-50" id="floatingSelect" aria-label="Floating label select example">
                                 <option selected>Estado Venta</option>
                                 <option value="Administrador">En proceso</option>
                                 <option value="Vendedor">Entregada</option>
@@ -81,21 +82,17 @@ export default function GestionarVentas() {
                             </select>
                             <label for="floatingSelect">Estado Venta</label>
                         </div>
-
-
                         <div class="form-floating mb-3">
-
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" name="fecha" value="dd-mm-yyyy"  class="form-control" id="fecha" placeholder="" />
+                            <input type="date" name="fecha" class="form-control w-50" id="fecha" placeholder="" />
                             <label for="floatingInput">Fecha</label>
                         </div>
+                        
                         <div class="form-floating mb-3">
-                            <input type="text" name="Nombre" value="XXXXXXXXXX XXXXXXX  XXXX"  class="form-control" id="floatingInput" placeholder="valor unitario" />
+                            <input type="text" name="Nombre" value="XXXXXXXXXX XXXXXXX  XXXX" class="form-control" id="floatingInput" placeholder="valor unitario" />
                             <label for="floatingInput">Nombre Cliente</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="idcliente" value="XXXXXXXXXX"  class="form-control" id="floatingInput" placeholder="valor unitario" />
+                            <input type="text" name="idcliente" value="XXXXXXXXXX" class="form-control" id="floatingInput" placeholder="valor unitario" />
                             <label for="floatingInput">Documento de Identificación</label>
                         </div>
                         <div class="form-floating floating-select">
@@ -114,13 +111,13 @@ export default function GestionarVentas() {
                                     <tr>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="ID" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="ID" /></td>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
 
 
-                                        <td> <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="PRECIO" />
+                                        <td> <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="PRECIO" />
                                         </td>
 
 
@@ -131,10 +128,10 @@ export default function GestionarVentas() {
                                             <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="ID" /></td>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
 
 
-                                        <td> <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="PRECIO" />
+                                        <td> <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="PRECIO" />
                                         </td>
 
 
@@ -142,13 +139,13 @@ export default function GestionarVentas() {
                                     <tr>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="ID" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="ID" /></td>
 
                                         <td>
-                                            <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
+                                            <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="CANTIDAD" /></td>
 
 
-                                        <td> <input type="text" name="Nombre" value="XXXXX"  class="form-control" id="floatingInput" placeholder="PRECIO" />
+                                        <td> <input type="text" name="Nombre" value="XXXXX" class="form-control" id="floatingInput" placeholder="PRECIO" />
                                         </td>
 
 
@@ -156,8 +153,8 @@ export default function GestionarVentas() {
                                 </tbody>
                             </table>
                         </div>
-                        <button  type="submit" class="btn btn-primary w-100">Agregar linea de Venta</button>
-                        <button  type="submit" class="btn btn-primary w-100">Actualizar Venta</button>
+                        <button type="submit" class="btn btn-primary w-100">Agregar linea de Venta</button>
+                        <button type="submit" class="btn btn-primary w-100">Actualizar Venta</button>
                     </div>
                     <div class="col col-lg-2">
 

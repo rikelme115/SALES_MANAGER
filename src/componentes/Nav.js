@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import './Nav.css';
-import UserProfile from './UserProfile';
+import GoogleLoginComponent from "./googlebutton.component";
+import Cookies from 'universal-cookie';
+
 
 const Nav = () => {
+    const cookies = new Cookies();
     return (
         <nav class="navbar navbar-expand-md navbar-dark fixed-top">
             <div class="container-fluid">
@@ -15,7 +18,7 @@ const Nav = () => {
                         <li class="nav-item">
                             <Link exact class="nav-link active" aria-current="page" to="/" >Home</Link>
                         </li>
-            
+
                         <li class="nav-item dropdown">
                             <Link class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Ventas
@@ -48,8 +51,8 @@ const Nav = () => {
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <Link exact class="btn btn-outline-primary" >{UserProfile.getName()}</Link>
-                        <Link exact class="btn btn-outline-success" type="submit" to="/login" >Login</Link>
+                        <Link exact class="btn btn-outline-primary"  >{cookies.get('nombreUsuario')}</Link>
+                        <GoogleLoginComponent />
                     </form>
 
                 </div>

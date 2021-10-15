@@ -15,15 +15,28 @@ export default function FormProducto() {
 
     const [descripcion, setDescripcion] = useState("")
     const [valor_unitario, setValor_unitario] = useState(0)
-    const [estado, setEstado] = useState("")
+    const [estado, setEstado] = useState("")   
+
+
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+           result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+     }; 
 
     const insert_products = () => {
         axios.post("http://localhost:3001/insertar_producto", {
+            codigo_producto: makeid(10),
             descripcion: descripcion,
             valor_unitario: valor_unitario,
             estado: estado,
         }).then(() => {
             alert("Datos insertados exitosamente")
+            
         })
     };
 

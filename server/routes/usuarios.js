@@ -3,6 +3,8 @@ const router = express.Router();
 const db = require('../database/db');
 const mysql = require('mysql')
 
+var connection = mysql.createConnection(db);
+
 
 router.get("/usuarios", (req, res) => {
     const sqlSelect = "SELECT * FROM usuarios";
@@ -11,24 +13,35 @@ router.get("/usuarios", (req, res) => {
     });
 });
 
-router.post("/usuarios/insertar_producto", (req, res) => {
+router.post("/usuarios/inserta_usuario", (req, res) => {
     const nombre = req.body.nombre;
     const email = req.body.email;
     const rol = req.body.rol;
     const estado = req.body.estado;
-
-    db.query(
-        "INSERT INTO usuarios (nombre, email, rol, estado) VALUES (?,?,?,?)",
+    db.query("INSERT INTO usuarios (nombre, email, rol, estado) VALUES (?,?,?,?)",
         [nombre, email, rol, estado],
-        (err, result) => {
+        (err, res) => {
             if (err) {
                 console.log(err);
             } else {
-                res.send("Datos Insertados");
+                console.log("Datos Insertados");
             }
         }
     );
 });
+
+
+router.get("/usuarios/:email", (req, res) => {
+    const email = req.params.email;
+    const sqlSelect = "SELECT * FROM usuarios WHERE email= ?";
+    db.query(sqlSelect, email, (err, result) => {
+        res.send(result);
+    });
+});
+
+
+
+
 
 router.delete("/usuarios/delete/:idusuarios", (req, res) => {
     const id = req.params.idusuarios;

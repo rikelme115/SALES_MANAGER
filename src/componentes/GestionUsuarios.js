@@ -2,20 +2,24 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './GestionUsuarios.css'
 //import UserProfile from './UserProfile';
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function GestionUsuarios() {
     //const user = UserProfile.getName();
     const [usuariosLista, setUsuariosLista] = useState([]);
+    const [busqueda, setBusqueda] = useState('');
     const [usuarioSeleccionado, setUsuarioSeleccionado] = useState({
         idusuarios: '',
         nombre: '',
         email: '',
         rol: '',
         estado: ''
-    });
+    });   
+
+    const changeHandle = e => {
+        setBusqueda(e.target.value);
+    }
 
 
     const seleccionarUsuarios = (usuarios) => {
@@ -40,9 +44,8 @@ export default function GestionUsuarios() {
             rol: usuarioSeleccionado.rol,
             estado: usuarioSeleccionado.estado
         }).then((response) => {
-            alert("actualizacion exitosa")
             setUsuariosLista(usuariosLista.map((usuarios) => {
-                return usuarios.idusuarios == idusuarios ? { idusuarios: usuarios.idusuarios, nombre: usuarioSeleccionado.nombre, email: usuarioSeleccionado.email, rol: usuarioSeleccionado.rol, estado: usuarioSeleccionado.estado } : usuarios;
+                return usuarios.idusuarios == idusuarios ? { idusuarios: usuarios.idusuarios, nombre: usuarioSeleccionado.nombre, email: usuarioSeleccionado.email, rol: usuarioSeleccionado.rol, estado: usuarioSeleccionado.estado } : usuarios;                
 
             }))
 
@@ -85,8 +88,8 @@ export default function GestionUsuarios() {
                     <div class="col-md-auto">
                         <h1>Gestión de usuarios</h1>
 
-                        <input class="form-control form-control-dark d-flex w-100" type="text" placeholder="Buscar usuario" aria-label="Search" />
-                        <h3>Detalle Usuario</h3>
+                        <input class="form-control form-control-dark d-flex w-50" type="text" placeholder="Buscar usuario" value={busqueda} aria-label="Search" onChange={changeHandle} />
+                        <h3 class="mt-5">Detalle Usuario</h3>
                         <table class="table table-hover table-bordered">
                             <thead>
                                 <tr>
@@ -99,7 +102,14 @@ export default function GestionUsuarios() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {usuariosLista && usuariosLista.map((usuarios) => {
+                                {usuariosLista && usuariosLista.filter((usuarios) => {
+                                    if (busqueda == "") {
+                                        return usuarios
+                                    } else if (usuarios.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+                                        usuarios.email.toLowerCase().includes(busqueda.toLowerCase())) {
+                                        return usuarios
+                                    }
+                                }).map((usuarios) => {
                                     return (
 
                                         <tr key={usuarios.idusuarios}>

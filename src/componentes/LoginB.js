@@ -16,7 +16,7 @@ const LoginB = () => {
                     </div>
                     <form class="col-12">
                         <div class="d-grid gap-2">
-                            <GoogleLoginComponent />
+                            <GoogleLoginComponent />                            
                         </div>
                     </form>
                 </div>

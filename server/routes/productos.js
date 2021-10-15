@@ -12,13 +12,14 @@ router.get("/productos", (req, res) => {
 });
 
 router.post("/insertar_producto", (req, res) => {
+    const codigo_producto = req.body.codigo_producto;
     const descripcion = req.body.descripcion;
     const valor_unitario = req.body.valor_unitario;
     const estado = req.body.estado;
 
     db.query(
-        "INSERT INTO productos (descripcion, valor_unitario, estado) VALUES (?,?,?)",
-        [descripcion, valor_unitario, estado],
+        "INSERT INTO productos (codigo_producto, descripcion, valor_unitario, estado) VALUES (?,?,?,?)",
+        [codigo_producto, descripcion, valor_unitario, estado],
         (err, result) => {
             if (err) {
                 console.log(err);

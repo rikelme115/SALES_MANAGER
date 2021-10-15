@@ -1,90 +1,94 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
-import UserProfile from './UserProfile';
+import Cookies from 'universal-cookie';
+import cookie from 'react-cookies';
+import axios from "axios";
 
-const CLIENT_ID =
-  "868743608228-uevqhvhflfl6btl2dqia40ucd32bahue.apps.googleusercontent.com";
+const CLIENT_ID = "868743608228-uevqhvhflfl6btl2dqia40ucd32bahue.apps.googleusercontent.com";
 
-class GoogleLoginComponent extends Component {
+function Login() {
+  const [llamadaUsuario, setLlamadaUsuario] = useState([]);
 
-  constructor() {
-    super();
-    this.state = {
-      isLoggedIn: false,
-      userInfo: {
-        name: "",
-        emailId: "",
-        //img: "",
-      },
-    };
-  }
+  const [showloginButton, setShowloginButton] = useState(true);
+  const [showlogoutButton, setShowlogoutButton] = useState(false);
+  const cookies = new Cookies();
 
-  // Success Handler
-  responseGoogleSuccess = (response) => {
-    console.log();
+  const onLoginSuccess = async (res) => {
+    console.log('Inicio de Sesion Exitoso:', res);
+    if (res.tokenId) {
+      cookie.save('token', res.tokenId);
+      try {
 
-    //axios({
-     // method: "POST",
-     // url: "http://localhost:3001/api/googlelogin",
-     // data: {
-        //tokenId: response.tokenId,
-      //}
-   // }).then(response => {
-      //console.log(response)
-    //})
-  //};
+        await axios.get(`http://localhost:3001/usuarios/${res.profileObj.email}`)
+        .then(res => {
+          setLlamadaUsuario(res.data)
+          llamadaUsuario.map((usuario)=>{
+            console.log(usuario.email)
+          })
+        });
+        //llamadaUsuario.map((usuario) => {
+          //if (usuario.email == res.profileObj.email) {
+            //console.log(usuario.email)
+          //} else {
+            //const user = axios.post('http://localhost:3001/usuarios/inserta_usuario', {
+              //nombre: res.profileObj.name,
+              //email: res.profileObj.email,
+              //rol: "",
+              //estado: "pendiente",
+            //});
+            //console.log(user);
+          //}
+        //})
+        setShowloginButton(false);
+        setShowlogoutButton(true);
 
-    let userInfo = {
-      name: response.profileObj.name,
-      emailId: response.profileObj.email,
-      //img: response.profileObj.imageUrl,
-    };
-    console.log(response)
-    this.setState({ userInfo, isLoggedIn: true });
+      } catch (error) {
+        console.log('error', error);
+
+      }
+    }
+
   };
 
-  // Error Handler
-  responseGoogleError = (response) => {
-    console.log(response);
+  const onLoginFailure = (res) => {
+    console.log('Error de Inicio:', res);
   };
 
-  // Logout Session and Update State
-  logout = (response) => {
-    console.log(response);
-    let userInfo = {
-      name: "",
-      emailId: "",
-    };
-    this.setState({ userInfo, isLoggedIn: false });
+  const onSignoutSuccess = () => {
+    cookies.remove('nombreUsuario', { path: '/' })
+    alert("has cerrado sesion");
+    console.clear();
+    setShowloginButton(true);
+    setShowlogoutButton(false);
+
+
   };
 
-  render() {
-    const email = this.state.userInfo.emailId
-    UserProfile.setName(email);
-    return (
-      <div>
-        {this.state.isLoggedIn ? (
-          <div>
 
-            <p>Bienvenido, {UserProfile.getName()}</p>
-            <GoogleLogout
-              clientId={CLIENT_ID}
-              buttonText={"Cerrar Sesion"}
-              onLogoutSuccess={this.logout}
-            ></GoogleLogout>
-          </div>
-        ) : (
-          <GoogleLogin
-            clientId={CLIENT_ID}
-            buttonText="Iniciar Sesion con Gmail"
-            onSuccess={this.responseGoogleSuccess}
-            onFailure={this.responseGoogleError}
-            isSignedIn={true}
-            cookiePolicy={"single_host_origin"}
-          />
-        )}
-      </div>
-    );
-  }
+  return (
+
+    <div>
+
+
+      {showloginButton ?
+        <GoogleLogin
+          clientId={CLIENT_ID}
+          buttonText="Iniciar Sesion con Gmail"
+          onSuccess={onLoginSuccess}
+          onFailure={onLoginFailure}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={true}
+        /> : null}
+
+      {showlogoutButton ?
+        <GoogleLogout
+          clientId={CLIENT_ID}
+          buttonText="Cerrar Sesion"
+          onLogoutSuccess={onSignoutSuccess}
+        >
+        </GoogleLogout> : null
+      }
+    </div>
+  );
 }
-export default GoogleLoginComponent;
+export default Login;
