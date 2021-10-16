@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../database/db');
-const mysql = require('mysql')
-
-var connection = mysql.createConnection(db);
+const mysql = require('mysql');
 
 
 router.get("/usuarios", (req, res) => {
@@ -31,7 +29,7 @@ router.post("/usuarios/inserta_usuario", (req, res) => {
 });
 
 
-router.get("/usuarios/:email", (req, res) => {
+router.get("/usuarios/validar/:email", (req, res) => {
     const email = req.params.email;
     const sqlSelect = "SELECT * FROM usuarios WHERE email= ?";
     db.query(sqlSelect, email, (err, result) => {

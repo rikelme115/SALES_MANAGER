@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import './Nav.css';
-import GoogleLoginComponent from "./googlebutton.component";
-import Cookies from 'universal-cookie';
 
 
 const Nav = () => {
-    const cookies = new Cookies();
     return (
         <nav class="navbar navbar-expand-md navbar-dark fixed-top">
             <div class="container-fluid">
@@ -50,10 +47,6 @@ const Nav = () => {
                             <Link exact class="nav-link" aria-current="page" to="/about" >Acerca de</Link>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <Link exact class="btn btn-outline-primary"  >{cookies.get('nombreUsuario')}</Link>
-                        <GoogleLoginComponent />
-                    </form>
 
                 </div>
             </div>
