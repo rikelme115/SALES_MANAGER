@@ -28,7 +28,7 @@ export default function AppRouter() {
                 <Route exact path="/" component={LoginB}/>
                 <Route exact path="/categorias" component={Categorias}/>
                 <Route exact path="/usuarios" component={Usuarios}/>
-                <Route exact path="/realizarventa" component={VentasForm}/>
+                <Route exact path="/realizarventa" component={Ventas}/>
                 <Route exact path="/gestionarventas" component={GestionarVentas}/>
                 <Route exact path="/Profile/:username" component={Profile}/>
 

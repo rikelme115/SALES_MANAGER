@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', require('./routes/productos'))
 app.use('/', require('./routes/usuarios'))
+app.use('/', require('./routes/ventas'))
 
 app.listen(3001, () => {
 

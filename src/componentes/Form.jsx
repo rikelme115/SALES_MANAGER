@@ -29,16 +29,13 @@ const Form = () => {
     }
     return (
     <div className="container">
-      <h1>Interface de Ventas</h1>
       <div >
         <div className="flex-large">
           <h2>Registro de las ventas</h2>
+          <hr />
           <AddForm addSale={addSale} />
         </div>
-        <div className="flex-large">
-          <h2>Lista de ventas realizadas</h2>
-          <UserTable sales={sales} />          
-        </div>
+        
       </div>
     </div>
     )
